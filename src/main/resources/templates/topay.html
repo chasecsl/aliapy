@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script th:inline="javascript">
+        window.onload = function(){
+            //打开新的页签，进行支付
+            window.open("/pay/alipay?orderid=" + [[${orderid}]], "_blank");
+        }
+
+        //判断是否真的支付成功
+        function isPay(ele){
+            location.href = "/pay/ispay?orderid=" + ele.id;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="javascript:isPay(this);" th:id="${orderid}"><a href="https://detail.tmall.com/item.htm?id=589944105118&ali_refid=a3_430673_1006:1125131325:N:emtiAWsF8+zhhxaiwzc0Aw==:4eaffa1032dd7b44a7be8288bb3a25b1&ali_trackid=1_4eaffa1032dd7b44a7be8288bb3a25b1&spm=a2e15.8261149.07626516002.4">50</a></button>
+    <button><a href="https://detail.tmall.com/item.htm?id=589944105118&ali_refid=a3_430673_1006:1125131325:N:emtiAWsF8+zhhxaiwzc0Aw==:4eaffa1032dd7b44a7be8288bb3a25b1&ali_trackid=1_4eaffa1032dd7b44a7be8288bb3a25b1&spm=a2e15.8261149.07626516002.4">100</a></button>
+	
+	<a href="https://detail.tmall.com/item.htm?id=589944105118&ali_refid=a3_430673_1006:1125131325:N:emtiAWsF8+zhhxaiwzc0Aw==:4eaffa1032dd7b44a7be8288bb3a25b1&ali_trackid=1_4eaffa1032dd7b44a7be8288bb3a25b1&spm=a2e15.8261149.07626516002.4"><button>200</button></a>
+</body>
+</html>
